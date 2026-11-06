@@ -68,8 +68,6 @@ function pagination() {
         paginationDiv.append(button);
     }
 }
-document.getElementById("search").addEventListener("input", filtrer);
 document.getElementById("status-filter").addEventListener("change", filtrer);
 loadAndDisplayTrips();
 document.getElementById("search").addEventListener("input",filtrer);
-document.getElementById()

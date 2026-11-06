@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 text-slate-800">
-    <header class="bg-white border-b p-4">
-        <div class="max-w-7xl mx-auto flex items-center gap-4">
-            <div class="bg-blue-600 text-white p-3 rounded-xl">
-                <i class="fa-solid fa-bus text-xl"></i>
-            </div>
-            <h1 class="text-xl font-bold">BusDirect</h1>
-        </div>
+  <header class="bg-white text-slate-800 border-b border-slate-200 shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="bg-indigo-900 text-amber-400 p-3 rounded-xl shadow-md">
+            <i class="fa-solid fa-bus text-2xl"></i>
+          </div>
+          <div>
+            <h1 class="text-2xl font-black text-indigo-950 tracking-wide">BusDirect</h1>
+            <div class="flex items-center space-x-2 text-slate-600 text-sm font-medium">
+          </div>
     </header>
     <main class="max-w-7xl mx-auto p-6">
         <div class="flex justify-between items-center mb-6">
@@ -29,21 +33,22 @@
             <div class="flex flex-col md:flex-row justify-between gap-4 mb-6">
                 <div>
                     <h3 class="text-lg font-bold"> Trajets programmes</h3>
-                    <p id="results-count" class="text-sm text-gray-500">20 résultats trouves</p>
+                    <p id="results-count" class="text-sm text-gray-500">20 résultats trouves </p>
                 </div>
                 <div>
-                    <input type="text" id="search-input" placeholder="Rechercher une ville..." class="border p-3 rounded-xl w-full">
+                    <input type="text" id="search" placeholder="Rechercher une ville..." class="border p-3 rounded-xl w-full">
                 </div>
-                <div class="flex gap-2">
-                    <button id="filter-all" class="filter-btn  text-black p-2 rounded-lg">Tous</button>
-                    <button id="filter-available" class="filter-btn border p-2 rounded-lg">Disponibles</button>
-                    <button id="filter-full" class="filter-btn border p-2 rounded-lg"> Complets </button>
-                   </div>
+    <div class="flex gap-2">
+<select id="status-filter">
+    <option value="tout">Tous</option>
+    <option value="disponible">Disponibles</option>
+    <option value="complete">Complets</option>
+</select>
+   </div>
             </div>
             <div id="trips-grid"class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             </div>
             <div id="pagination" class="flex justify-center gap-3 mt-6"></div>
-
             <div id="empty-state" class="hidden text-center p-10">
                 <i class="fa-solid fa-bus text-3xl text-gray-400"></i>
                 <h4 class="font-bold mt-3"> Aucun trajet trouve</h4>
@@ -51,6 +56,6 @@
             </div>
         </div>
     </main>
-    <script src="../js/api.js"></script>
+    <script type="module" src="./js/main-trajets.js"></script>
 </body>
 </html>
